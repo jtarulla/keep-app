@@ -6,16 +6,26 @@
       </div>
       <div class="card-body">
         <form action="/signin" method="POST">
+          <div class="form-group text-center">
+            <a href="/auth/google">
+              <img src="/assets/btn_google_signin_light_focus_web.png" class="google-btn" alt="google-btn">
+            </a>
+          </div>
+          <hr>
+          <p class="text-center">or</p>
+          <hr>
           <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Email">
+            <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}" autofocus
+              required>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
           </div>
 
           <button class="btn btn-primary btn-block">Sign In</button>
         </form>
       </div>
+
     </div>
   </div>
 </div>

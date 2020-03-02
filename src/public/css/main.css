@@ -32,7 +32,7 @@ body {
 	height: 40px;
 	bottom: 20px;
 	right: 12px;
-	background-color: rgb(182, 252, 197);
+	background-color: rgb(117, 243, 144);
 	color: #fff;
 	border-radius: 50px;
 	text-align: center;
@@ -54,4 +54,14 @@ a.float + div.label-container {
 a.float:hover + div.label-container {
 	visibility: visible;
 	opacity: 1;
+}
+
+.google-btn:hover {
+	margin: 0 auto;
+	transition: visibility 0s, opacity 0.5s ease;
+	box-shadow: 2px 2px 3px #999;
+	border-radius: 3px;
+}
+.google-btn {
+	border-radius: 5px;
 }
