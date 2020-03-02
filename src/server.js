@@ -25,6 +25,21 @@ app.engine(
 );
 app.set('view engine', '.hbs');
 
+// Forces SSL for all routes in production
+const forceSsl =  (req, res, next) => {
+	if (req.headers['x-forwarded-proto'] !== 'https') {
+			return res.redirect(['https://', req.get('Host'), req.url].join(''));
+	}
+	return next();
+};
+
+app.configure(() => {
+
+	if (env === 'production') {
+			app.use(forceSsl);
+	}
+}
+
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
