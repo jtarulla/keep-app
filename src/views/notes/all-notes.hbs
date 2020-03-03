@@ -1,23 +1,56 @@
-<div class="card-columns" style="display: inline-block ;">
+<div class="container-fluid">
+  <div class="card-columns" style="display: inline-block ;">
 
-  {{#if notes}}
-  {{#each notes}}
-  <div class="card m-1">
-    <div class="card-body">
-      <h4 class="card-title d-flex justify-content-between align-items-center">
-        {{title}} <a href="/notes/edit/{{_id}}"><i class="fa fa-pencil-square-o fa-sm m-1" data-toggle="modal"
-            aria-hidden="true"></i></a>
-      </h4>
-      <p class="">
-        {{description}}
-      </p>
-      <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
-        <input type="hidden" name="_method" id="DELETE">
-        <button type="submit" class="btn btn-danger btn-block">Delete</button>
-      </form>
+    {{#if notes}}
+    {{#each notes}}
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title d-flex justify-content-between align-items-center">
+          {{title}}
+        </h3>
+      </div>
+      <div class="card-body m-1 p-1">
+        <p class="">
+          {{description}}
+        </p>
+        <div class="container-fluid align-items-center text-center">
+
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle align-items-right text-right" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>&middot; &middot; &middot;</strong>
+            </a>
+
+            <div class="dropdown-menu ml-auto" aria-labelledby="navbarDropdown">
+              <div class="dropdown-item">
+                <a href="/notes/edit/{{_id}}" style="text-decoration: none;">
+                  <button type="submit" class="btn btn-info rounded-circle"><i class="fa fa-pencil" data-toggle="modal"
+                      aria-hidden="true"></i></button></a>
+                &emsp; Edit
+
+              </div>
+
+              <div class="dropdown-item">
+                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                  <input type="hidden" name="_method" id="DELETE">
+                  <button type="submit" class="btn btn-danger rounded-circle">X</button>
+                  &emsp; Delete
+                </form>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-item">
+                <a href="whatsapp://send?text={{title}}:{{ description}}" target="_blank"><button
+                    class=" btn btn-success rounded-circle"><i class="fab fa-whatsapp"></i></button></a>
+                &emsp; Share
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+    {{/each}}
   </div>
-  {{/each}}
 </div>
 {{else}}
 <div class="col-md-4 mx-auto">
