@@ -1,22 +1,20 @@
-<div class="container">
+<div class="container ">
 
-  <div class="row">
+  <div class="row  m-1">
     {{#each notes}}
     <!-- Notes Cards -->
+    <div class="col-md-3 pt-3">
+      <div class="card-header text-center pb-0">
+        <h4>{{title}}</h4>
+      </div>
 
-    <div class="col-md-3 " style="max-width: 20rem;">
-      <h4 class="card-header">
-        {{title}}
-      </h4>
-
-      <div class="card-body outline-secondary ">
+      <div class="card-body">
         <p class="card-text">{{description}}
         </p>
       </div>
-
-      <!-- Dropdown Button -->
-      <div class="float-right p-1">
-        <button role="button" type="button" class="btn btn-outline-secondary rounded-circle " data-toggle="dropdown"
+      <div class="card-footer">
+        <!-- Dropdown Button -->
+        <button role="button" type="button" class="btn btn-outline-secondary rounded-circle" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           &middot;&middot;&middot;
         </button>
@@ -43,7 +41,9 @@
             &emsp; Share
           </div>
         </div>
+        <!-- End Dropdown Button -->
       </div>
+
     </div>
     {{else}}
     <!-- Zero Notes Button -->
@@ -59,8 +59,7 @@
   {{/each}}
 </div>
 
-
-<!-- Add Note Button -->
+<!-- Add Notes Button -->
 <div class="add-btn">
   <a href="/notes/add" class="float">
     <i class="fa fa-plus my-float"></i>
@@ -70,31 +69,3 @@
     <i class="fa fa-play label-arrow"></i>
   </div>
 </div>
-{{!-- 
-<div class="row">
-  {{#each notes}}
-  <div class="col-md-3">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title d-flex justify-content-between align-items-center">
-          {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-        </h4>
-        <p>{{ description }} </p>
-        <!-- DELETE REQUEST -->
-        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  {{else}}
-  <div class="card mx-auto">
-    <div class="card-body">
-      <h1>Hello {{user.name}}</h1>
-      <p clsss="lead">There are not Notes yet.</p>
-      <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
-    </div>
-  </div>
-  {{/each}}
-</div> --}}
