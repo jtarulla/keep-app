@@ -70,15 +70,14 @@ a.float:hover + div.label-container {
 
 /* Small and Medium devices*/
 @media (min-width: 370px) and (max-width: 825px) {
-	.card-columns {
+	.card-row {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
 		column-count: 2;
-		align-items: inline-block;
 		max-width: 100%;
 	}
 	body {
-		margin-left: 0rem;
+		margin-left: 1rem;
 		margin-right: 0rem;
 		padding: 0;
 	}
@@ -96,7 +95,6 @@ a.float:hover + div.label-container {
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
 		column-count: 3;
-		display: inline-block;
 	}
 }
 
@@ -106,7 +104,11 @@ a.float:hover + div.label-container {
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
 		column-count: 3;
-		display: inline-block;
+	}
+	body {
+		margin-left: 1rem;
+		margin-right: 0rem;
+		padding: 0;
 	}
 }
 
@@ -116,6 +118,10 @@ a.float:hover + div.label-container {
 		-webkit-column-count: 4;
 		-moz-column-count: 4;
 		column-count: 4;
-		display: inline-block;
+	}
+	body {
+		margin-left: 1rem;
+		margin-right: 0rem;
+		padding: 0;
 	}
 }
